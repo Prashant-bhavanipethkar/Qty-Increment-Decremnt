@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantity Increment - Decrement</title>
+
+    <style>
+        .text-centre {
+            text-align: center;
+        }
+
+        .container {
+            height: 350px;
+            width: 300px;
+            background-color: #e0f3ff;
+            display: block;
+            margin: 0px auto;
+            border-radius: 20px;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            border: 2px solid #008ae6;
+
+        }
+
+        .image {
+            height: 180px;
+            display: block;
+            margin: 0px auto;
+        }
+
+        .increase {
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .decrease {
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 150px;
+            margin: 10px auto;
+
+        }
+
+        .btn {
+            display: block;
+            margin: 18px auto;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: #008ae6;
+            cursor: pointer;
+            margin-top: 30px;
+
+        }
+
+        .btn:hover {
+            background-color: #004f84;
+            transition: 0.3s;
+        }
+
+        .font {
+            font-size: 18px;
+        }
+
+        .font-family {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .font1 {
+            font-size: 15px;
+        }
+
+        .h1-color {
+            color: #05568d;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1 class="text-centre h1-color">PRODUCT INCREMENT - DECREMENT</h1>
+    <div class="container">
+        <img src="./images/image.png" alt="iphone" id="image" class="image">
+        <p class="text-centre font font-family">Price: ₹ 75,000/-</p>
+        <div class="quantity-container">
+            <img src="./images/decrease.png" alt="decrease-icon" id="decrease" class="decrease" onclick="decrement()">
+            <span id="quantity">1</span>
+            <img src="./images/increase.png" alt="increase-icon" id="increase" class="increase" onclick="increment()">
+        </div>
+        <button type="button" id="btn" class="btn font1">Buy Now</button>
+    </div>
+
+    <script>
+
+        const quantityElement = document.getElementById("quantity");
+        let quantity = parseInt(quantityElement.innerText);
+
+        function increment() {
+            quantityElement.innerText = ++quantity;
+        }
+
+        function decrement() {
+            if (quantity>1) {
+                quantityElement.innerText = --quantity;
+            } 
+        }
+
+    </script>
+</body>
+
+</html>
